@@ -1,8 +1,8 @@
-import { DynamicModule, Module } from '@nestjs/common';
-import { DbService } from './db.service';
+import { DynamicModule, Module } from '@nestjs/common'
+import { DbService } from './db.service'
 
 export interface DbModuleOptions {
-  path: string;
+  path: string
 }
 
 @Module({})
@@ -18,7 +18,7 @@ export class DbModule {
         DbService,
       ],
       exports: [DbService],
-    };
+    }
   }
 }
 
