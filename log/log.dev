@@ -1,0 +1,14 @@
+{"context":"RoutesResolver","level":"info","message":"AppController {/}:","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.789Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/, GET} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.792Z"}
+{"context":"RoutesResolver","level":"info","message":"UserController {/user}:","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.793Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/log, POST} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.794Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/merge/file, GET} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.795Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/upload/large-file, POST} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.796Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/upload/avt, POST} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.801Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/new, POST} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.803Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/login, POST} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.804Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user, GET} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.807Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/:id, GET} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.815Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/:id, PATCH} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.816Z"}
+{"context":"RouterExplorer","level":"info","message":"Mapped {/user/:id, DELETE} route","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.817Z"}
+{"context":"NestApplication","level":"info","message":"Nest application successfully started","time":"09/11/2025 16:14:01","timestamp":"2025-11-09T09:14:01.820Z"}
