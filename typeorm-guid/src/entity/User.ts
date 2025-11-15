@@ -17,6 +17,9 @@ export class User {
     @Column()
     age: number
 
+    @Column()
+    email: string
+
     @OneToOne(() => CCCD, (cccd) => cccd.user)
     cccd: CCCD
 
