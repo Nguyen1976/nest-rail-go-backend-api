@@ -63,6 +63,7 @@ model User {
   name    String
   email   String  @unique
   posts   Post[]
+  profile Profile?
 
   @@map("users")
 }
@@ -74,6 +75,7 @@ model Category {
   posts Post[]  @relation("PostCategories")
 
   @@map("categories")
+  postCategories PostCategory[] @relation("PostCategories")
 }
 
 model PostCategory {
@@ -98,6 +100,7 @@ model Post {
   updatedAt  DateTime       @updatedAt
 
   @@map("posts")
+  postCategories PostCategory[] @relation("PostCategories")
 }
 
 //one to one
