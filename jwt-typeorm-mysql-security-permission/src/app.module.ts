@@ -2,9 +2,10 @@ import { Module } from '@nestjs/common'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { UserModule } from './user/user.module';
-import { User } from './user/entities/user.entity';
-import { JwtModule } from '@nestjs/jwt';
+import { UserModule } from './user/user.module'
+import { User } from './user/entities/user.entity'
+import { JwtModule } from '@nestjs/jwt'
+import { Permission } from './user/entities/permission.entity'
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { JwtModule } from '@nestjs/jwt';
       database: 'jwt_security_permission',
       synchronize: true,
       logging: true,
-      entities: [User],
+      entities: [User, Permission],
       migrations: [],
       subscribers: [],
     }),
@@ -26,7 +27,7 @@ import { JwtModule } from '@nestjs/jwt';
       global: true,
       secret: 'your-secret-key',
       signOptions: { expiresIn: '60m' },
-    })
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],

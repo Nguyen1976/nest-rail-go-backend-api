@@ -67,4 +67,17 @@ export class UserService {
     }
     return userVo
   }
+
+  async getPermissionsByUserId(userId: number): Promise<string[]> {
+    const user = await this.userRepository.findOne({
+      where: { id: userId },
+      relations: ['permissions'],
+    })
+
+    if (!user) {
+      throw new HttpException('User not found', 404)
+    }
+
+    return user.permissions.map((permission) => permission.name)
+  }
 }
