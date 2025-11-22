@@ -6,6 +6,11 @@ import { UserModule } from './user/user.module'
 import { User } from './user/entities/user.entity'
 import { JwtModule } from '@nestjs/jwt'
 import { Permission } from './user/entities/permission.entity'
+import { Role } from './user/entities/role.entity'
+import { AdminModule } from './admin/admin.module'
+import { APP_GUARD } from '@nestjs/core'
+import { LoginGuard } from './login.guard'
+import { PermissionRabcGuard } from './user/permission-rabc.guard'
 
 @Module({
   imports: [
@@ -18,7 +23,7 @@ import { Permission } from './user/entities/permission.entity'
       database: 'jwt_security_permission',
       synchronize: true,
       logging: true,
-      entities: [User, Permission],
+      entities: [User, Permission, Role],
       migrations: [],
       subscribers: [],
     }),
@@ -28,8 +33,19 @@ import { Permission } from './user/entities/permission.entity'
       secret: 'your-secret-key',
       signOptions: { expiresIn: '60m' },
     }),
+    AdminModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: LoginGuard,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: PermissionRabcGuard,
+    },
+  ],
 })
 export class AppModule {}

@@ -15,8 +15,10 @@ import { LoginUserDto } from './dto/login-user'
 import { LoginUserVo } from './vo/login-user.view'
 import { LoginGuard } from 'src/login.guard'
 import { PermissionGuard } from './permission.guard'
+import { permitAll } from 'src/common/custom-decorator'
 
 @Controller('user')
+@permitAll()
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

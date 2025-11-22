@@ -1,0 +1,33 @@
+### Send OTP
+POST http://localhost:3000/auth/send-otp
+Content-Type: application/json
+
+{
+    "email": "services.tipjs@gmail.com"
+}
+
+### User -> Register
+POST http://localhost:3000/auth/register 
+Content-Type: application/json
+
+{
+    "username": "services",
+    "nickname": "services",
+    "email": "services.tipjs@gmail.com",
+    "password": "@@@Abc123",
+    "otp": "308637"
+}
+
+### User -> Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "tipsgolang",
+    "password": "123456789"
+}
+
+### User -> Info
+GET http://localhost:3000/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRpcHNnb2xhbmciLCJzdWIiOjYsImlhdCI6MTc1NDc1MzQ4MCwiZXhwIjoxNzU0ODM5ODgwfQ.1sSra6SLMCS7cn-6Av8JdcBEn5uK4ZBL7GLpiAt0Ko8

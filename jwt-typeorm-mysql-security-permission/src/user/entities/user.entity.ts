@@ -8,6 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm'
 import { Permission } from './permission.entity'
+import { Role } from './role.entity'
 
 @Entity({
   name: 'jwt_user',
@@ -45,9 +46,15 @@ export class User {
   })
   updatedAt: Date
 
-  @ManyToMany(() => Permission)
+  @ManyToMany(() => Role)
   @JoinTable({
-    name: 'jwt_user_permissions',
+    name: 'jwt_user_role',
   })
-  permissions: Permission[]
+  roles: Role[]
+
+  // @ManyToMany(() => Permission)
+  // @JoinTable({
+  //   name: 'jwt_user_permissions',
+  // })
+  // permissions: Permission[]
 }

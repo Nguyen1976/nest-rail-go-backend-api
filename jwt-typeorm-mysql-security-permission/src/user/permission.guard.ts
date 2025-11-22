@@ -51,7 +51,7 @@ export class PermissionGuard implements CanActivate {
         throw new UnauthorizedException(`User lacks required permission: ${rp}`)
       }
     }
-
+    
     return true
   }
 }

@@ -78,6 +78,7 @@ export class UserService {
       throw new HttpException('User not found', 404)
     }
 
-    return user.permissions.map((permission) => permission.name)
+    // return user.permissions.map((permission) => permission.name)
+    return []
   }
 }
