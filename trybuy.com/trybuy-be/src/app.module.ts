@@ -14,7 +14,7 @@ import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true
+      isGlobal: true,
     }),
     // nodemailer
     MailerModule.forRootAsync({
@@ -43,18 +43,17 @@ import { PugAdapter } from '@nestjs-modules/mailer/dist/adapters/pug.adapter';
       }),
     }),
     TypeOrmModule.forRoot({
-     type: "mysql",
-      host: "mysql-drunl-api-services-drunk-mysql.d.aivencloud.com",
+      type: 'mysql',
+      host: '1',
       port: 13837,
-      username: "avnadmin",
-      password: "",
-      database: "try_buy",
+      username: 'avnadmin',
+      password: '1',
+      database: 'try_buy',
       synchronize: true,
       logging: true,
       entities: [User, Role, Permission],
       migrations: [],
-      subscribers: []
-      
+      subscribers: [],
     }),
     UserModule,
     AuthModule,
