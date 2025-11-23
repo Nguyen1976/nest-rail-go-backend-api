@@ -22,7 +22,7 @@ interface AuthContextType {
   isLoading: boolean; // status loading
   login: (loginData: any) => Promise<void>;
   logout: () => void;
-}
+} 
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
